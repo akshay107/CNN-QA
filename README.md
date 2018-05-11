@@ -6,10 +6,9 @@ This repository contains code for the paper:
 
 ## Dependencies
 
-1. Keras v2 with Theano backend
+1. Keras v2 with Theano (v 0.9.0) backend
 2. PyLucene 6.5.0 http://lucene.apache.org/pylucene/ 
-3. Pickle
-4. NLTK toolkit
+3. Pickle, NLTK, numpy
 
 Pylucene is needed for query expansion based paragraph selection.
 
