@@ -1,2 +1,1 @@
-# CNN-QA
-CNN for Multiple Choice Question Answering
+# CNN-QA: CNN for Multiple Choice Question Answering
