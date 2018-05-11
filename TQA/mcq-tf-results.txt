@@ -1,0 +1,139 @@
+model.get_different_model()
+"diff_arch_best_epoch_weights.h5"
+
+val set
+thresh = 0.1
+540/994 true-false correct
+316/1097 mcq without all of the above/ two of the above/ both a and b type of questions correct
+118/433 mcq with all of the above/ two of the above/ both a and b type of questions correct
+
+434/1530
+
+test set
+true-false 491/913 
+mcq  430/1599
+
+model.get_different_model()
+"diff_arch_epoch_34_weights.h5"
+
+val set
+thresh = 0.1
+536/994 true-false correct
+345/1097 mcq without all of the above/ two of the above/ both a and b type of questions correct
+113/433 mcq with all of the above/ two of the above/ both a and b type of questions correct
+
+thresh = 0.6
+536/994 true-false correct
+345/1097 mcq without all of the above/ two of the above/ both a and b type of questions correct
+184/433 mcq with all of the above/ two of the above/ both a and b type of questions correct
+
+529/1530
+
+
+Out of 433, 190 questions have forbidden option correct. 
+
+190   243  tn   
+2     104  243  thresh = 0.0
+39    74   185  thresh = 0.1
+81    47   123  thresh = 0.2
+118   35   80   thresh = 0.3
+143   25   51   thresh = 0.4
+161   16   31   thresh = 0.5
+176   8    15   thresh = 0.6
+185   5    8    thresh = 0.7
+189   3    4    thresh = 0.8
+189   2    2    thresh = 0.9
+190   1    1    thresh = 1.0
+
+
+test set
+true-false 494/913 
+mcq  552/1599
+
+2007/2524 same paragraph is selected regardless of query expansion
+
+model1
+threshold  correct
+0.1          512
+0.2          632
+0.3          686
+0.4          722
+0.5          729
+0.6          737
+0.7          744
+0.8          736 
+
+model2
+threshold  correct
+0.1          540
+0.2          621
+0.3          704
+0.4          729
+0.5          735
+0.6          739
+0.7          729
+
+
+
+"model1_epoch_75.h5"
+word level attention
+[1.1236801684925997, 0.41373390973957314]
+[1.1002397766843599, 0.45519758707389196]
+
+thresh = 0.7
+557/994 true-false correct
+323/1097 mcq without all of the above/ two of the above/ both a and b type of questions correct
+191/433 mcq with all of the above/ two of the above/ both a and b type of questions correct
+
+"model2_epoch_18.h5"
+question as input
+[1.1278063155806628, 0.40729614196928787]
+[1.0994643500656558, 0.46362950304781436]
+
+thresh = 0.6
+536/994 true-false correct
+321/1097 mcq without all of the above/ two of the above/ both a and b type of questions correct
+191/433 mcq with all of the above/ two of the above/ both a and b type of questions correct
+
+
+closest_paragraph.txt is when query is just the question along with query expansion
+closest_sent_try.txt is when query is question+options along with query expansion
+closest_sent_try2.txt is when query is question+options without query expansion
+
+max_doc_length is 500
+
+
+model.get_cnn_model2()
+model_fname = "epoch_160_linear_cnn_model.h5"
+
+thresh = 0.4
+531/994 true-false correct
+345/1097 mcq without all of the above/ two of the above/ both a and b type of questions correct
+186/433 mcq with all of the above/ two of the above/ both a and b type of questions correct
+
+threshold  correct
+0.0          448
+0.1          653
+0.2          728
+0.3          754
+0.4          754
+0.5          747
+
+model.get_cnn_model4()
+model_fname = "epoch_v5_linear_cnn_model4.h5"
+
+thresh = 0.3
+537/994 true-false correct
+355/1097 mcq without all of the above/ two of the above/ both a and b type of questions correct
+188/433 mcq with all of the above/ two of the above/ both a and b type of questions correct
+
+threshold  correct
+0.0          453
+0.1          682
+0.2          754
+0.3          765
+0.4          746
+
+test set
+true-false 487/913 
+mcq  577/1599
