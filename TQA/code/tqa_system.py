@@ -54,12 +54,9 @@ class tqa_system():
 
 
 if __name__ == "__main__":
-    '''train_data_path = "../data/train/processed_data/one_hot_files"
+    train_data_path = "../data/train/processed_data/one_hot_files"
     val_data_path = "../data/val/processed_data/one_hot_files"
-    test_data_path = "../data/test/processed_data/one_hot_files"'''
-    train_data_path = "/home/cvpr/akshay/TQA/train/processed_data/one_hot_files"
-    val_data_path = "/home/cvpr/akshay/TQA/val/processed_data/one_hot_files"
-    test_data_path = "/home/cvpr/akshay/TQA/test/processed_data/one_hot_files"
+    test_data_path = "../data/test/processed_data/one_hot_files"
     word2vec_path = "../../word2vec/GoogleNews-vectors-negative300.bin.gz"
     tqa_sys = tqa_system(word2vec_path,train_data_path,val_data_path,test_data_path)
     tqa_sys.train_ndq_model()
