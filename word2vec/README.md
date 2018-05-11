@@ -1,1 +1,1 @@
-Upload word2vec in this folder
+Extract GoogleNews-vectors-negative300.bin.gz in this folder
