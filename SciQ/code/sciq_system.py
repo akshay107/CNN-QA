@@ -20,7 +20,7 @@ class sciq_system():
         self.val_data_path = val_data_path
         self.test_data_path = test_data_path
         self.word2vec_path = word2vec_path
-        self.models_path = os.path.join("/home/cvpr/akshay/SciQ/SciQ dataset-2 3/train","saved_models")
+        self.models_path = os.path.join("../data/train","saved_models")
         if not os.path.exists(self.models_path):
             os.makedirs(self.models_path)
 
