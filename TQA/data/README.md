@@ -1,1 +1,1 @@
-Extract train, valid and test folder in this folder
+Extract train, valid and test data in this folder
