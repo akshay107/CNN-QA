@@ -71,7 +71,7 @@ class get_closest_sentences():
 
     def generate_closest_sentence(self):
 
-        w2vec_path = "/home/cvpr/Debjyoti/docvec/GoogleNews-vectors-negative300.bin.gz"
+        w2vec_path = "../../GoogleNews-vectors-negative300.bin.gz"
         self.W2V_MODEL = Word2Vec.load_word2vec_format(w2vec_path,binary=True)
         self.W2V_MODEL.init_sims(replace=True)
 
