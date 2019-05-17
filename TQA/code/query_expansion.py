@@ -11,7 +11,7 @@ import shutil
 class sentence_retriever_using_w2vec():
     def __init__(self,w2v_model=None):
         if w2v_model is None:
-            w2vec_path = "/home/cvpr/Debjyoti/docvec/GoogleNews-vectors-negative300.bin.gz"
+            w2vec_path = "../../GoogleNews-vectors-negative300.bin.gz"
             self.W2V_MODEL = Word2Vec.load_word2vec_format(w2vec_path,binary=True)
             self.W2V_MODEL.init_sims(replace=True)
         else:
