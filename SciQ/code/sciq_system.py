@@ -37,7 +37,8 @@ class sciq_system():
         #train_model.load_weights(os.path.join(self.models_path,model_load_weights_fname))
         checkpointer = ModelCheckpoint(filepath=os.path.join(self.models_path,model_fname), verbose=1, save_best_only=True, save_weights_only=True)
         train_model.fit_generator(read_train_data.read_all_vectors(),steps_per_epoch=self.steps_per_epoch,epochs = self.nb_epoch,validation_data=read_val_data.read_all_vectors(),callbacks = [checkpointer], validation_steps=self.validation_steps,verbose=1)
-        train_model.save_weights(os.path.join(self.models_path,model_fname))
+        #train_model.save_weights(os.path.join(self.models_path,model_fname))
+        train_model.load_weights(os.path.join(self.models_path,model_fname))
         s1 = train_model.evaluate_generator(read_val_data.read_all_vectors(),steps=self.validation_steps)
         s2 = train_model.evaluate_generator(read_train_data.read_all_vectors(),steps=self.steps_per_epoch)
         #s3 = train_model.evaluate_generator(read_test_data.read_all_vectors(),steps=self.test_steps) # For testing on test set
