@@ -2,7 +2,7 @@ import os
 import numpy as np
 from model import sciq_model
 from data_prepare import prepare_data
-
+from keras.callbacks import ModelCheckpoint
 
 class sciq_system():
     def __init__(self,word2vec_path,train_data_path,val_data_path,test_data_path):
@@ -35,6 +35,7 @@ class sciq_system():
         model = sciq_model(self.word_vec_size,self.max_q_length,self.max_option_length,self.max_opt_count,self.max_sent_para,self.max_words_sent)
         train_model = model.get_cnn_model2()
         #train_model.load_weights(os.path.join(self.models_path,model_load_weights_fname))
+        checkpointer = ModelCheckpoint(filepath=os.path.join(self.models_path,model_fname), verbose=1, save_best_only=True, save_weights_only=True)
         train_model.fit_generator(read_train_data.read_all_vectors(),steps_per_epoch=self.steps_per_epoch,epochs = self.nb_epoch,validation_data=read_val_data.read_all_vectors(),callbacks = [checkpointer], validation_steps=self.validation_steps,verbose=1)
         train_model.save_weights(os.path.join(self.models_path,model_fname))
         s1 = train_model.evaluate_generator(read_val_data.read_all_vectors(),steps=self.validation_steps)
